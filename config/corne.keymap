@@ -9,6 +9,34 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        arrow-right-end {
+            bindings = <&kp END>;
+            key-positions = <41 21>;
+            layers = <1>;
+        };
+
+        arrow-left-home {
+            bindings = <&kp HOME>;
+            key-positions = <41 18>;
+            layers = <1>;
+        };
+
+        arrow-up-pgup {
+            bindings = <&kp PG_UP>;
+            key-positions = <41 20>;
+            layers = <1>;
+        };
+
+        arrow-down-pgdown {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <41 20>;
+            layers = <1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -37,7 +65,7 @@
             bindings = <
 &trans  &kp N1  &kp N2  &kp N3   &kp N4      &kp N5    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0     &kp RA(W)
 &trans  &none   &none   &kp ESC  &kp DELETE  &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RA(L)  &kp RA(Z)
-&trans  &none   &none   &none    &none       &none     &none     &none     &none     &none      &none      &trans
+&trans  &none   &none   &none    &kp INSERT  &none     &none     &none     &none     &none      &none      &trans
                         &trans   &trans      &trans    &trans    &mo 3     &kp RALT
             >;
         };
