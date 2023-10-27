@@ -11,29 +11,24 @@
 / {
     combos {
         compatible = "zmk,combos";
+    };
 
-        arrow-right-end {
-            bindings = <&kp END>;
-            key-positions = <41 21>;
-            layers = <1>;
+    behaviors {
+        end_right_arrow: end_right_arrow {
+            compatible = "zmk,behavior-mod-morph";
+            label = "END_RIGHT_ARROW";
+            bindings = <&kp RIGHT>, <&kp END>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
+        home_left_arrow: home_left_arrow {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOME_LEFT_ARROW";
+            bindings = <&kp LEFT>, <&kp HOME>;
 
-        arrow-left-home {
-            bindings = <&kp HOME>;
-            key-positions = <41 18>;
-            layers = <1>;
-        };
-
-        arrow-up-pgup {
-            bindings = <&kp PG_UP>;
-            key-positions = <41 20>;
-            layers = <1>;
-        };
-
-        arrow-down-pgdown {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <41 20>;
-            layers = <1>;
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
 
